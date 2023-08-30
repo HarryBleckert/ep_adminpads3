@@ -1,6 +1,6 @@
 {
   "name": "ep_adminpads3",
-  "version": "3.0.4",
+  "version": "3.0.5",
   "description": "Etherpad plugin to search, view sorted lists and delete pads in /admin.",
   "keywords": [
     "etherpad",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HarryBleckert/ep_adminpads3.git"
+    "url": "git+https://github.com/HarryBleckert/ep_adminpads3.git"
   },
   "main": "index.js",
   "dependencies": {
