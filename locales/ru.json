@@ -1,13 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"Megakott"
+			"DDPAT",
+			"Ice bulldog",
+			"Megakott",
+			"Okras"
 		]
 	},
 	"ep_adminpads3_action": "Действие",
+	"ep_adminpads3_autoupdate-label": "Автообновление при изменении документа",
+	"ep_adminpads3_autoupdate.title": "Включает или отключает автоматические обновления для текущего запроса.",
+	"ep_adminpads3_confirm": "Вы действительно хотите удалить документ {{padID}}?",
 	"ep_adminpads3_delete.value": "Удалить",
 	"ep_adminpads3_last-edited": "Последнее изменение",
+	"ep_adminpads3_loading": "Загрузка…",
+	"ep_adminpads3_manage-pads": "Управление документами",
 	"ep_adminpads3_no-results": "Нет результатов",
+	"ep_adminpads3_pad-user-count": "Количество пользователей документа",
+	"ep_adminpads3_padname": "Название документа",
+	"ep_adminpads3_search-box.placeholder": "Искать термин",
+	"ep_adminpads3_search-button.value": "Найти",
+	"ep_adminpads3_search-done": "Поиск завершён",
+	"ep_adminpads3_search-error-explanation": "Сервер обнаружил ошибку при поиске документов:",
+	"ep_adminpads3_search-error-title": "Не удалось получить список документов",
+	"ep_adminpads3_search-heading": "Поиск документов",
+	"ep_adminpads3_title": "Администрирование документов",
 	"ep_adminpads3_unknown-error": "Неизвестная ошибка",
 	"ep_adminpads3_unknown-status": "Неизвестный статус"
 }

@@ -1,9 +1,13 @@
 {
 	"@metadata": {
 		"authors": [
-			"Ykhwong"
+			"Ykhwong",
+			"그냥기여자"
 		]
 	},
+	"ep_adminpads3_action": "동작",
+	"ep_adminpads3_autoupdate-label": "패드 변경 시 자동 업데이트",
+	"ep_adminpads3_autoupdate.title": "현재 쿼리의 자동 업데이트를 활성화하거나 비활성화합니다.",
 	"ep_adminpads3_confirm": "{{padID}} 패드를 삭제하시겠습니까?",
 	"ep_adminpads3_delete.value": "삭제",
 	"ep_adminpads3_last-edited": "최근 편집",
@@ -12,6 +16,7 @@
 	"ep_adminpads3_no-results": "결과 없음",
 	"ep_adminpads3_pad-user-count": "패드 사용자 수",
 	"ep_adminpads3_padname": "패드 이름",
+	"ep_adminpads3_search-box.placeholder": "검색어",
 	"ep_adminpads3_search-button.value": "검색",
 	"ep_adminpads3_search-done": "검색 완료",
 	"ep_adminpads3_search-error-explanation": "패드 검색 중 서버에 오류가 발생했습니다:",

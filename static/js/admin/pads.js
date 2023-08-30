@@ -2,18 +2,23 @@
 
 ToDos:
 fix AutoUpdate. It doesn't work, disabled in pads.html
-find better solution to 
+find better solution to
 sort only single time and allow re-using result array
 
 */
+
+/* global _ */
+
+'use strict';
 
 $(() => {
   let query = {
     pattern: '',
     offset: 0,
-    limit: 17000, //12
+    limit: 17000, // 12
   };
   let total;
+
   let queryFreq = 1000;   // 1 second wait for query update
   const urlParams = new URLSearchParams(window.location.search);
 
@@ -22,6 +27,7 @@ $(() => {
   // Note: The socket.io URL should not contain ${basePath} because the path part of this URL is
   // used as the socket.io namespace.
   const socketioUrl = `${location.protocol}//${location.host}/pluginfw/admin/pads`;
+
   const socket = io.connect(socketioUrl, {path: socketioPath});
 
   let changeTimer;
@@ -40,6 +46,13 @@ $(() => {
     search();
   };
 
+  /*
+  const formatDate = (longtime) => (new Date(longtime)).toLocaleString(undefined, {
+
+    dateStyle: 'short',
+    timeStyle: 'long',
+  });
+   */
   const isInt = (input) => typeof input === 'number' && input % 1 === 0;
 
   const formatDate = (longtime) => {
@@ -61,12 +74,14 @@ $(() => {
     });
 
     $('#do-search').off('click').click(submitSearch);
+
+    // $('#search-query').off('change paste keyup').on('change paste keyup', (e) => {
     $('#search-query' ).off('change paste keyup').on('change paste keyup', (e) => {
       clearTimeout(changeTimer);
       changeTimer = setTimeout(() => {
         e.preventDefault();
         submitSearch();
-      }, queryFreq );
+      }, queryFreq ); // 500
     });
 
     $('.do-delete').off('click').click((e) => {
@@ -135,14 +150,24 @@ $(() => {
     $('#offset').text(query.offset);
     $('#limit').text(limit);
     $('#total').text(total);
-    
+
     if (data.results.length > 0) {
       $('#loading').hide();
       $('#no-results').hide();
       $('#error').hide();
       const resultList = $('#results').empty();
-    
-    
+      /*
+      data.results.forEach((resultset) => {
+        const {padName, lastEdited, userCount} = resultset;
+        const row = $('#template').clone().removeAttr('id');
+        row.find('.padname').empty().append(
+            $('<a>').attr('href', `../p/${encodeURIComponent(padName)}`).text(padName));
+        row.find('.last-edited').text(formatDate(lastEdited));
+        row.find('.user-count').text(userCount);
+        resultList.append(row);
+      });
+      $('#pad-widget').show();
+       */
       var sortBy = "lastEdited";
       var sortTags = ["padName", "lastEdited", "userCount", "padSize", "revisions"];
       var sortParam = urlParams.get('sortby');
@@ -150,7 +175,7 @@ $(() => {
       { sortBy = sortParam; }
       var descending = true;
       if ( Cookies.get("descending") === "false" )
-      {  descending = false; } 
+      {  descending = false; }
       if ( Cookies.get("sortBy") === sortBy && sortParam )
       {  descending = !descending; }
       else
@@ -166,30 +191,34 @@ $(() => {
         if ( sortBy == "padName" )
         { return b.padName.localeCompare(a.padName); }
         return b[sortBy] - a[sortBy];
-        });
+      });
       }
       else
       { data.results.sort(function(a,b) {
         if ( sortBy == "padName" )
         { return a.padName.localeCompare(b.padName); }
         return a[sortBy] - b[sortBy];
-        });
+      });
       }
-      
+
       var activeusers = 0;
       var padSizeTotal = 0;
+      var changedToday = 0;
+      var last24 = Math.floor( Date.now() / 1000 ) - 86400 ;
       //sortedResults.forEach((resultset) => {
       data.results.forEach((resultset) => {
         const {padName, lastEdited, userCount, padSize, revisions} = resultset;
         const row = $('#template').clone().removeAttr('id');
-        row.find('.padname').empty().append( $('<a>').attr('href', `../p/${encodeURIComponent(padName)}`).text(padName));
+        var pluginUrl = "https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad";
+        row.find('.padname').empty().append( $('<a target="pad">').attr('href', `${pluginUrl}=${encodeURIComponent(padName)}`).text(padName));
         row.find('.last-edited').text(formatDate(lastEdited));
-	row.find('.Size').text(padSize.toLocaleString("de-DE"));
+        row.find('.Size').text(padSize.toLocaleString("de-DE"));
         row.find('.Revisions').text(revisions); //.toLocaleString("de-DE"));
         row.find('.user-count').text(userCount);
         resultList.append(row);
         activeusers += userCount;
-	padSizeTotal += padSize;
+        padSizeTotal += padSize;
+        if ( Math.floor(lastEdited/1000) >= last24 ) { changedToday += 1;  }
       });
       $('#activeusers').text(activeusers.toLocaleString("de-DE"));
       $('#padsizetotal').text(padSizeTotal.toLocaleString("de-DE"));
@@ -197,12 +226,13 @@ $(() => {
       $('#pad-widget').show();
       //statistics
       $('#totalPads').text(total); //text(data.Stats.totalPads);
+      $('#changedToday').text(changedToday);
       //$('#totalSessions').text(data.Stats.totalSessions);
       //$('#activePads').text(data.Stats.totalActivePads)
 
       var sortCol = $('#'+sortBy).text();
       var arrow   = descending ?" &darr;" :" &uarr;";
-      $('#'+sortBy).html( "<i>"+sortCol + "</i>" + arrow);      
+      $('#'+sortBy).html( "<i>"+sortCol + "</i>" + arrow);
 
     } else {
       $('#loading').hide();

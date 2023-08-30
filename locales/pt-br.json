@@ -1,16 +1,30 @@
 {
 	"@metadata": {
 		"authors": [
-			"Eduardo Addad de Oliveira"
+			"Duke of Wikipädia",
+			"Eduardo Addad de Oliveira",
+			"Eduardoaddad",
+			"YuriNikolai"
 		]
 	},
 	"ep_adminpads3_action": "Ação",
+	"ep_adminpads3_autoupdate-label": "Atualizar notas automaticamente",
 	"ep_adminpads3_autoupdate.title": "Habilita ou desabilita atualizações automáticas para a consulta atual.",
+	"ep_adminpads3_confirm": "Você realmente deseja excluir a nota {{padID}}?",
 	"ep_adminpads3_delete.value": "Excluir",
 	"ep_adminpads3_last-edited": "Última edição",
 	"ep_adminpads3_loading": "Carregando…",
+	"ep_adminpads3_manage-pads": "Gerenciar notas",
 	"ep_adminpads3_no-results": "Sem resultados",
+	"ep_adminpads3_pad-user-count": "Número de utilizadores na nota",
+	"ep_adminpads3_padname": "Nome da nota",
+	"ep_adminpads3_search-box.placeholder": "Termo de pesquisa",
 	"ep_adminpads3_search-button.value": "Pesquisar",
+	"ep_adminpads3_search-done": "Busca completa",
+	"ep_adminpads3_search-error-explanation": "O servidor encontrou um erro enquanto procurava por notas:",
+	"ep_adminpads3_search-error-title": "Falha ao buscar lista de notas",
+	"ep_adminpads3_search-heading": "Pesquisar por notas",
+	"ep_adminpads3_title": "Administração de notas",
 	"ep_adminpads3_unknown-error": "Erro desconhecido",
 	"ep_adminpads3_unknown-status": "Status desconhecido"
 }

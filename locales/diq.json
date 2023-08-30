@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"1917 Ekim Devrimi"
+			"1917 Ekim Devrimi",
+			"Mirzali"
 		]
 	},
 	"ep_adminpads3_action": "Hereketi",
@@ -12,7 +13,7 @@
 	"ep_adminpads3_last-edited": "Vurnayışo peyên",
 	"ep_adminpads3_loading": "Bar beno...",
 	"ep_adminpads3_manage-pads": "Pedan idare kerê",
-	"ep_adminpads3_no-results": "Netice çıno",
+	"ep_adminpads3_no-results": "Netice çıniyo",
 	"ep_adminpads3_pad-user-count": "Amarê karberanê pedi",
 	"ep_adminpads3_padname": "Padname",
 	"ep_adminpads3_search-box.placeholder": "termê cıgêrayış",

@@ -34,12 +34,12 @@ jobs:
         - sudo apt-get -y install libreoffice-pdfimport
       install:
         - "npm install"
-        - "mkdir ep_adminpads2"
-        - "mv !(ep_adminpads2) ep_adminpads2"
+        - "mkdir ep_adminpads3"
+        - "mv !(ep_adminpads3) ep_adminpads3"
         - "git clone https://github.com/ether/etherpad-lite.git etherpad"
         - "cd etherpad"
         - "mkdir -p node_modules"
-        - "mv ../ep_adminpads2 node_modules"
+        - "mv ../ep_adminpads3 node_modules"
         - "bin/installDeps.sh"
         - "export GIT_HASH=$(git rev-parse --verify --short HEAD)"
         - "cd src && npm install && cd -"
@@ -50,12 +50,12 @@ jobs:
         - "tests/frontend/travis/sauce_tunnel.sh"
       install:
         - "npm install"
-        - "mkdir ep_adminpads2"
-        - "mv !(ep_adminpads2) ep_adminpads2"
+        - "mkdir ep_adminpads3"
+        - "mv !(ep_adminpads3) ep_adminpads3"
         - "git clone https://github.com/ether/etherpad-lite.git etherpad"
         - "cd etherpad"
         - "mkdir -p node_modules"
-        - "mv ../ep_adminpads2 node_modules"
+        - "mv ../ep_adminpads3 node_modules"
         - "bin/installDeps.sh"
         - "export GIT_HASH=$(git rev-parse --verify --short HEAD)"
       script:
