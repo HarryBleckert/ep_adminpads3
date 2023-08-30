@@ -125,7 +125,7 @@ exports.eejsBlock_adminMenu = (hookName, context, cb) => {
       $('<li>').append(
           $('<a>')
               .attr('href', `${pfx}pads`)
-              .attr('data-l10n-id', 'ep_adminpads2_manage-pads')
+              .attr('data-l10n-id', 'ep_adminpads3_manage-pads')
               .text('Manage pads')));
   context.content = ul.html();
   return cb();
