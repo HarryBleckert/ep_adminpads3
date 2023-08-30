@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Andibecker"
+		]
+	},
+	"ep_adminpads3_action": "การกระทำ",
+	"ep_adminpads3_autoupdate-label": "อัปเดตอัตโนมัติเมื่อเปลี่ยนแผ่น",
+	"ep_adminpads3_autoupdate.title": "เปิดหรือปิดการอัปเดตอัตโนมัติสำหรับคิวรีปัจจุบัน",
+	"ep_adminpads3_confirm": "คุณต้องการลบแพด {{padID}} จริงหรือไม่",
+	"ep_adminpads3_delete.value": "ลบ",
+	"ep_adminpads3_last-edited": "แก้ไขล่าสุด",
+	"ep_adminpads3_loading": "กำลังโหลด…",
+	"ep_adminpads3_manage-pads": "จัดการแผ่นรอง",
+	"ep_adminpads3_no-results": "ไม่มีผลลัพธ์",
+	"ep_adminpads3_pad-user-count": "จำนวนผู้ใช้แพด",
+	"ep_adminpads3_padname": "นามแฝง",
+	"ep_adminpads3_search-box.placeholder": "คำที่ต้องการค้นหา",
+	"ep_adminpads3_search-button.value": "ค้นหา",
+	"ep_adminpads3_search-done": "ค้นหาเสร็จสมบูรณ์",
+	"ep_adminpads3_search-error-explanation": "เซิร์ฟเวอร์พบข้อผิดพลาดขณะค้นหาแผ่นอิเล็กโทรด:",
+	"ep_adminpads3_search-error-title": "ไม่สามารถรับรายการแผ่นรอง",
+	"ep_adminpads3_search-heading": "ค้นหาแผ่นรอง",
+	"ep_adminpads3_title": "การบริหารแผ่น",
+	"ep_adminpads3_unknown-error": "ข้อผิดพลาดที่ไม่รู้จัก",
+	"ep_adminpads3_unknown-status": "ไม่ทราบสถานะ"
+}

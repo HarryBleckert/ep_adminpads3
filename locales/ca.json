@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Mguix"
+		]
+	},
+	"ep_adminpads3_action": "Acció",
+	"ep_adminpads3_autoupdate-label": "Actualització automàtica en cas de canvis de pad",
+	"ep_adminpads3_autoupdate.title": "Activa o desactiva les actualitzacions automàtiques per a la consulta actual.",
+	"ep_adminpads3_confirm": "Esteu segur que voleu suprimir el pad {{padID}}?",
+	"ep_adminpads3_delete.value": "Esborrar",
+	"ep_adminpads3_last-edited": "Darrera modificació",
+	"ep_adminpads3_loading": "S’està carregant…",
+	"ep_adminpads3_manage-pads": "Gestiona els pads",
+	"ep_adminpads3_no-results": "No hi ha cap resultat",
+	"ep_adminpads3_pad-user-count": "Nombre d'usuaris de pads",
+	"ep_adminpads3_padname": "Nom del pad",
+	"ep_adminpads3_search-box.placeholder": "Terme de cerca",
+	"ep_adminpads3_search-button.value": "Cercar",
+	"ep_adminpads3_search-done": "Cerca completa",
+	"ep_adminpads3_search-error-explanation": "El servidor ha trobat un error mentre buscava pads:",
+	"ep_adminpads3_search-error-title": "No s'ha pogut obtenir la llista del pad",
+	"ep_adminpads3_search-heading": "Cerca pads",
+	"ep_adminpads3_title": "Administració del pad",
+	"ep_adminpads3_unknown-error": "Error desconegut",
+	"ep_adminpads3_unknown-status": "Estat desconegut"
+}

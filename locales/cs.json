@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Spotter"
+		]
+	},
+	"ep_adminpads3_action": "Akce",
+	"ep_adminpads3_autoupdate-label": "Automatická aktualizace změn Padu",
+	"ep_adminpads3_autoupdate.title": "Povolí nebo zakáže automatické aktualizace pro aktuální dotaz.",
+	"ep_adminpads3_confirm": "Opravdu chcete odstranit pad {{padID}}?",
+	"ep_adminpads3_delete.value": "Smazat",
+	"ep_adminpads3_last-edited": "Naposledy upraveno",
+	"ep_adminpads3_loading": "Načítání…",
+	"ep_adminpads3_manage-pads": "Spravovat pady",
+	"ep_adminpads3_no-results": "Žádné výsledky",
+	"ep_adminpads3_pad-user-count": "Počet uživatelů padu",
+	"ep_adminpads3_padname": "Název padu",
+	"ep_adminpads3_search-box.placeholder": "Hledaný výraz",
+	"ep_adminpads3_search-button.value": "Hledat",
+	"ep_adminpads3_search-done": "Hledání dokončeno",
+	"ep_adminpads3_search-error-explanation": "Při hledání padů došlo k chybě serveru:",
+	"ep_adminpads3_search-error-title": "Seznam padů se nepodařilo získat",
+	"ep_adminpads3_search-heading": "Hledat pady",
+	"ep_adminpads3_title": "Správa Padu",
+	"ep_adminpads3_unknown-error": "Neznámá chyba",
+	"ep_adminpads3_unknown-status": "Neznámý stav"
+}

@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Guilha"
+		]
+	},
+	"ep_adminpads3_action": "Ação",
+	"ep_adminpads3_autoupdate-label": "Atualizar automaticamente as notas",
+	"ep_adminpads3_autoupdate.title": "Ativa ou desativa atualizações automáticas na consulta atual.",
+	"ep_adminpads3_confirm": "Tencionas mesmo eliminar a nota {{padID}}?",
+	"ep_adminpads3_delete.value": "Eliminar",
+	"ep_adminpads3_last-edited": "Última edição",
+	"ep_adminpads3_loading": "A carregar...",
+	"ep_adminpads3_manage-pads": "Gerir notas",
+	"ep_adminpads3_no-results": "Sem resultados",
+	"ep_adminpads3_pad-user-count": "Número de utilizadores na nota",
+	"ep_adminpads3_padname": "Nome da nota",
+	"ep_adminpads3_search-box.placeholder": "Procurar termo",
+	"ep_adminpads3_search-button.value": "Procurar",
+	"ep_adminpads3_search-done": "Procura completa",
+	"ep_adminpads3_search-error-explanation": "O servidor encontrou um erro enquanto procurava por notas:",
+	"ep_adminpads3_search-error-title": "Falha ao obter lista de notas",
+	"ep_adminpads3_search-heading": "Procurar por notas",
+	"ep_adminpads3_title": "Administração da nota",
+	"ep_adminpads3_unknown-error": "Erro desconhecido",
+	"ep_adminpads3_unknown-status": "Estado desconhecido"
+}

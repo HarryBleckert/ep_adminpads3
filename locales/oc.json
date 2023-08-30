@@ -1,0 +1,21 @@
+{
+	"@metadata": {
+		"authors": [
+			"Quentí"
+		]
+	},
+	"ep_adminpads3_action": "Accion",
+	"ep_adminpads3_delete.value": "Suprimir",
+	"ep_adminpads3_last-edited": "Darrièra edicion",
+	"ep_adminpads3_loading": "Cargament…",
+	"ep_adminpads3_manage-pads": "Gerir los pads",
+	"ep_adminpads3_no-results": "Pas cap de resultat",
+	"ep_adminpads3_padname": "Nom del pad",
+	"ep_adminpads3_search-box.placeholder": "Tèrme de recèrca",
+	"ep_adminpads3_search-button.value": "Recercar",
+	"ep_adminpads3_search-done": "Recèrca acabada",
+	"ep_adminpads3_search-heading": "Cercar de pads",
+	"ep_adminpads3_title": "Administracion de pad",
+	"ep_adminpads3_unknown-error": "Error desconeguda",
+	"ep_adminpads3_unknown-status": "Estat desconegut"
+}

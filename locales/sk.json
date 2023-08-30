@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Yardom78"
+		]
+	},
+	"ep_adminpads3_action": "Akcia",
+	"ep_adminpads3_autoupdate-label": "Automatická aktualizácia zmien na poznámkovom bloku",
+	"ep_adminpads3_autoupdate.title": "Zapne alebo vypne automatickú aktualizáciu.",
+	"ep_adminpads3_confirm": "Skutočne chcete vymazať poznámkový blok {{padID}}?",
+	"ep_adminpads3_delete.value": "Vymazať",
+	"ep_adminpads3_last-edited": "Posledná úprava",
+	"ep_adminpads3_loading": "Načítavanie...",
+	"ep_adminpads3_manage-pads": "Spravovať poznámkové bloky",
+	"ep_adminpads3_no-results": "Žiadne výsledky",
+	"ep_adminpads3_pad-user-count": "Počet používateľov poznámkového bloku",
+	"ep_adminpads3_padname": "Názov poznámkového bloku",
+	"ep_adminpads3_search-box.placeholder": "Hľadať výraz",
+	"ep_adminpads3_search-button.value": "Hľadať",
+	"ep_adminpads3_search-done": "Hľadanie dokončené",
+	"ep_adminpads3_search-error-explanation": "Pri hľadaní poznámkového bloku došlo k chybe:",
+	"ep_adminpads3_search-error-title": "Nepodarilo sa získať zoznam poznámkových blokov",
+	"ep_adminpads3_search-heading": "Hľadať poznámkový blok",
+	"ep_adminpads3_title": "Správa poznámkového bloku",
+	"ep_adminpads3_unknown-error": "Neznáma chyba",
+	"ep_adminpads3_unknown-status": "Neznámy stav"
+}

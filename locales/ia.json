@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"McDutchie"
+		]
+	},
+	"ep_adminpads3_action": "Action",
+	"ep_adminpads3_autoupdate-label": "Actualisar automaticamente le pad in caso de cambiamentos",
+	"ep_adminpads3_autoupdate.title": "Activa o disactiva le actualisationes automatic pro le consulta actual.",
+	"ep_adminpads3_confirm": "Es tu secur de voler deler le pad {{padID}}?",
+	"ep_adminpads3_delete.value": "Deler",
+	"ep_adminpads3_last-edited": "Ultime modification",
+	"ep_adminpads3_loading": "Cargamento in curso…",
+	"ep_adminpads3_manage-pads": "Gerer pads",
+	"ep_adminpads3_no-results": "Nulle resultato",
+	"ep_adminpads3_pad-user-count": "Numero de usatores del pad",
+	"ep_adminpads3_padname": "Nomine del pad",
+	"ep_adminpads3_search-box.placeholder": "Termino de recerca",
+	"ep_adminpads3_search-button.value": "Cercar",
+	"ep_adminpads3_search-done": "Recerca terminate",
+	"ep_adminpads3_search-error-explanation": "Le servitor ha incontrate un error durante le recerca de pads:",
+	"ep_adminpads3_search-error-title": "Non poteva obtener le lista de pads",
+	"ep_adminpads3_search-heading": "Cercar pads",
+	"ep_adminpads3_title": "Administration de pads",
+	"ep_adminpads3_unknown-error": "Error incognite",
+	"ep_adminpads3_unknown-status": "Stato incognite"
+}

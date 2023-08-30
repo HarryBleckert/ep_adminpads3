@@ -1,0 +1,16 @@
+{
+	"@metadata": {
+		"authors": [
+			"Norhorn"
+		]
+	},
+	"ep_adminpads3_delete.value": "Διαγραφή",
+	"ep_adminpads3_last-edited": "Τελευταία απεξεργασία",
+	"ep_adminpads3_loading": "Φόρτωση…",
+	"ep_adminpads3_no-results": "Κανένα αποτέλεσμα",
+	"ep_adminpads3_search-box.placeholder": "Αναζήτηση όρων",
+	"ep_adminpads3_search-button.value": "Αναζήτηση",
+	"ep_adminpads3_search-done": "Ολοκλήρωση αναζήτησης",
+	"ep_adminpads3_unknown-error": "Άγνωστο σφάλμα",
+	"ep_adminpads3_unknown-status": "Άγνωστη κατάσταση"
+}

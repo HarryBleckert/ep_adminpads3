@@ -1,0 +1,27 @@
+{
+	"@metadata": {
+		"authors": [
+			"Artnay",
+			"Kyykaarme",
+			"MITO",
+			"Maantietäjä",
+			"Yupik"
+		]
+	},
+	"ep_adminpads3_action": "Toiminto",
+	"ep_adminpads3_delete.value": "Poista",
+	"ep_adminpads3_last-edited": "Viimeksi muokattu",
+	"ep_adminpads3_loading": "Ladataan...",
+	"ep_adminpads3_manage-pads": "Hallitse muistioita",
+	"ep_adminpads3_no-results": "Ei tuloksia",
+	"ep_adminpads3_pad-user-count": "Pad-käyttäjien määrä",
+	"ep_adminpads3_padname": "Muistion nimi",
+	"ep_adminpads3_search-box.placeholder": "Haettava teksti",
+	"ep_adminpads3_search-button.value": "Etsi",
+	"ep_adminpads3_search-done": "Haku valmis",
+	"ep_adminpads3_search-error-explanation": "Palvelimessa tapahtui virhe etsiessään muistioita:",
+	"ep_adminpads3_search-error-title": "Pad-luettelon hakeminen epäonnistui",
+	"ep_adminpads3_search-heading": "Etsi sisältöä",
+	"ep_adminpads3_unknown-error": "Tuntematon virhe",
+	"ep_adminpads3_unknown-status": "Tuntematon tila"
+}
