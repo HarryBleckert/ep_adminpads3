@@ -130,4 +130,4 @@ exports.eejsBlock_adminMenu = (hookName, context, cb) => {
   context.content = ul.html();
   return cb();
 };
-const regExpQuote = (x) => x.toString().replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
+// const regExpQuote = (x) => x.toString().replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
