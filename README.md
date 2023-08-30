@@ -3,7 +3,7 @@
 ![Screen shot](docs/img/preview.png)
 
 Etherpad plugin for admins to list, search, and delete pads.  
-Pad lists can be sorted by last edit date, size and number of revisions.    
+Pad lists can be sorted by last edited, size and number of revisions.    
 The route is `admin/pads`.
 
 This is a fork of
