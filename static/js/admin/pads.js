@@ -1,9 +1,10 @@
 /*
 
 ToDos:
-fix AutoUpdate. It doesn't work, disabled in pads.html
-find better solution to
-sort only single time and allow re-using result array
+- fix AutoUpdate. It doesn't work, disabled in pads.html
+- find better solution to sort only single time and allow re-using result array
+- Add pluginUrl to etherpad settings and retieve from there or configure. Currently Moodle instance of ASH Berlin is hardcoded.
+  pluginUrl = 'https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad';
 
 */
 
@@ -15,7 +16,7 @@ $(() => {
   let query = {
     pattern: '',
     offset: 0,
-    limit: 17000, // 12
+    limit: 300, // 12
   };
   let total;
 
@@ -209,7 +210,7 @@ $(() => {
       data.results.forEach((resultset) => {
         const {padName, lastEdited, userCount, padSize, revisions} = resultset;
         const row = $('#template').clone().removeAttr('id');
-        var pluginUrl = '/mod/etherpadlite/view.php?pad';
+        var pluginUrl = 'https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad';
         row.find('.padname').empty().append( $('<a target="pad">').attr('href', `${pluginUrl}=${encodeURIComponent(padName)}`).text(padName));
         row.find('.last-edited').text(formatDate(lastEdited));
         row.find('.Size').text(padSize.toLocaleString("de-DE"));
