@@ -12,6 +12,8 @@ ToDos:
 
 'use strict';
 
+// const settings = require('ep_etherpad-lite/node/utils/Settings');
+
 $(() => {
   let query = {
     pattern: '',
