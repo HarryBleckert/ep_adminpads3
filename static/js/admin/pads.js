@@ -209,7 +209,7 @@ $(() => {
       data.results.forEach((resultset) => {
         const {padName, lastEdited, userCount, padSize, revisions} = resultset;
         const row = $('#template').clone().removeAttr('id');
-        var pluginUrl = "https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad";
+        var pluginUrl = '/mod/etherpadlite/view.php?pad';
         row.find('.padname').empty().append( $('<a target="pad">').attr('href', `${pluginUrl}=${encodeURIComponent(padName)}`).text(padName));
         row.find('.last-edited').text(formatDate(lastEdited));
         row.find('.Size').text(padSize.toLocaleString("de-DE"));
