@@ -167,25 +167,14 @@ $(() => {
       $('#no-results').hide();
       $('#error').hide();
       const resultList = $('#results').empty();
-      /*
-      data.results.forEach((resultset) => {
-        const {padName, lastEdited, userCount} = resultset;
-        const row = $('#template').clone().removeAttr('id');
-        row.find('.padname').empty().append(
-            $('<a>').attr('href', `../p/${encodeURIComponent(padName)}`).text(padName));
-        row.find('.last-edited').text(formatDate(lastEdited));
-        row.find('.user-count').text(userCount);
-        resultList.append(row);
-      });
-      $('#pad-widget').show();
-       */
+
       let sortBy = 'lastEdited';
       const sortTags = ['padName', 'lastEdited', 'userCount', 'padSize', 'revisions'];
       const sortParam = urlParams.get('sortby');
       if (sortParam && (sortTags.indexOf(sortParam) > -1)) { sortBy = sortParam; }
       let descending = true;
       if (Cookies.get('descending') === 'false') { descending = false; }
-      if (Cookies.get('sortBy') === sortBy && sortParam) { descending = !descending; } else { descending = true; } // (sortBy == "padName" ?false :true); }
+      if (Cookies.get('sortBy') === sortBy && sortParam) { descending = !descending; } else { descending = true; }
       Cookies.set('sortBy', sortBy);
       Cookies.set('descending', descending);
       if (sortBy == 'padName') { descending = !descending; }
