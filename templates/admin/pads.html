@@ -114,7 +114,7 @@ ToDo: AutoUpdate input has been disabled because it is not working
           </form>
           
           <div id="search-results">
-            <div class="loading" id="loading">Loading...</div> <!-- data-l10n-id="ep_adminpads3_loading">Loading…</div-->
+            <div class="loading" id="loading" data-l10n-id="ep_adminpads3_loading">Loading…</div>
             <div id="pad-widget">
               <table id="results-table">
                 <thead>
@@ -147,9 +147,11 @@ ToDo: AutoUpdate input has been disabled because it is not working
                 <tbody id="results">
                 </tbody>
               </table>
+              <input type="button" value="&lt;" id="do-first-page">&nbsp;&nbsp;
               <input type="button" value="&lt;&lt;" id="do-prev-page">
-              <span id="offset"></span>..<span id="limit"></span> / <span id="total"></span>
-              <input type="button" value="&gt;&gt;" id="do-next-page">
+              <span id="offset"></span>...<span id="limit"></span> / <span id="total"></span>
+              <input type="button" value="&gt;&gt;" id="do-next-page">&nbsp;&nbsp;
+              <input type="button" value="&gt;" id="do-last-page">
             </div>
             <div id="no-results" data-l10n-id="ep_adminpads3_no-results">No results</div>
 	    <div id="showObj" style="display:none;"></div>

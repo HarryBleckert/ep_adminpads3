@@ -1,12 +1,11 @@
-/*
-
-ToDos:
-- fix AutoUpdate. It doesn't work, disabled in pads.html
-- find better solution to sort only single time and allow re-using result array
-- Add pluginUrl to etherpad settings and retieve from there or configure. Currently Moodle instance of ASH Berlin is hardcoded.
-  pluginUrl = 'https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad';
-
-*/
+/**
+ *
+ * ToDos:
+ * - fix AutoUpdate. It doesn't work, disabled in pads.html
+ * - find better solution to sort only single time and allow re-using result array
+ * - Add pluginUrl to etherpad settings and retieve from there or configure. Currently Moodle instance of ASH Berlin is hardcoded.
+ *   pluginUrl = 'https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad';
+ */
 
 /* global _ */
 
@@ -18,11 +17,11 @@ $(() => {
   let query = {
     pattern: '',
     offset: 0,
-    limit: 17000, // 12
+    limit: 900,
   };
   let total;
 
-  let queryFreq = 1000;   // 1 second wait for query update
+  const queryFreq = 1000; // 1 second wait for query update
   const urlParams = new URLSearchParams(window.location.search);
 
   const basePath = location.pathname.split('/').slice(0, -2).join('/'); // Strip /admin/plugins.
@@ -58,15 +57,13 @@ $(() => {
    */
   const isInt = (input) => typeof input === 'number' && input % 1 === 0;
 
-  const formatDate = (longtime) => {
-    //return (new Date(longtime)).toLocaleString(undefined, {
-    return (new Date(longtime)).toLocaleString("de-DE", {
+  const formatDate = (longtime) =>
+    // return (new Date(longtime)).toLocaleString(undefined, {
+    (new Date(longtime)).toLocaleString('de-DE', {
       dateStyle: 'short',
       timeStyle: 'long',
     });
-  };
-
-  const fillZeros = (x) => isInt(x) ? (x < 10 ? `0{x}` : x) : '';
+  const fillZeros = (x) => isInt(x) ? (x < 10 ? '0{x}' : x) : '';
 
   const updateHandlers = () => {
     $('#progress.dialog .close').off('click').click(() => $('#progress.dialog').hide());
@@ -79,12 +76,12 @@ $(() => {
     $('#do-search').off('click').click(submitSearch);
 
     // $('#search-query').off('change paste keyup').on('change paste keyup', (e) => {
-    $('#search-query' ).off('change paste keyup').on('change paste keyup', (e) => {
+    $('#search-query').off('change paste keyup').on('change paste keyup', (e) => {
       clearTimeout(changeTimer);
       changeTimer = setTimeout(() => {
         e.preventDefault();
         submitSearch();
-      }, queryFreq ); // 500
+      }, queryFreq); // 500
     });
 
     $('.do-delete').off('click').click((e) => {
@@ -97,6 +94,10 @@ $(() => {
       }
     });
 
+    $('#do-first-page').off('click').click((e) => {
+      query.offset = 0;
+      search();
+    });
     $('#do-prev-page').off('click').click((e) => {
       query.offset -= query.limit;
       if (query.offset < 0) query.offset = 0;
@@ -105,6 +106,13 @@ $(() => {
     $('#do-next-page').off('click').click((e) => {
       if (query.offset + query.limit < total) {
         query.offset += query.limit;
+      }
+      search();
+    });
+    $('#do-last-page').off('click').click((e) => {
+      query.offset = total - query.limit;
+      if (query.offset <0) {
+        query.offset = 0;
       }
       search();
     });
@@ -171,72 +179,71 @@ $(() => {
       });
       $('#pad-widget').show();
        */
-      var sortBy = "lastEdited";
-      var sortTags = ["padName", "lastEdited", "userCount", "padSize", "revisions"];
-      var sortParam = urlParams.get('sortby');
-      if ( sortParam && (sortTags.indexOf(sortParam) > -1) )
-      { sortBy = sortParam; }
-      var descending = true;
-      if ( Cookies.get("descending") === "false" )
-      {  descending = false; }
-      if ( Cookies.get("sortBy") === sortBy && sortParam )
-      {  descending = !descending; }
-      else
-      {  descending = true; } //(sortBy == "padName" ?false :true); }
-      Cookies.set("sortBy", sortBy );
-      Cookies.set("descending", descending );
-      if ( sortBy == "padName" )
-      {  descending = !descending; }
+      let sortBy = 'lastEdited';
+      const sortTags = ['padName', 'lastEdited', 'userCount', 'padSize', 'revisions'];
+      const sortParam = urlParams.get('sortby');
+      if (sortParam && (sortTags.indexOf(sortParam) > -1)) { sortBy = sortParam; }
+      let descending = true;
+      if (Cookies.get('descending') === 'false') { descending = false; }
+      if (Cookies.get('sortBy') === sortBy && sortParam) { descending = !descending; } else { descending = true; } // (sortBy == "padName" ?false :true); }
+      Cookies.set('sortBy', sortBy);
+      Cookies.set('descending', descending);
+      if (sortBy == 'padName') { descending = !descending; }
 
       data.results = data.results.slice(0);
-      if ( descending )
-      { data.results.sort(function(a,b) {
-        if ( sortBy == "padName" )
-        { return b.padName.localeCompare(a.padName); }
-        return b[sortBy] - a[sortBy];
-      });
-      }
-      else
-      { data.results.sort(function(a,b) {
-        if ( sortBy == "padName" )
-        { return a.padName.localeCompare(b.padName); }
-        return a[sortBy] - b[sortBy];
-      });
+      if (descending) {
+        data.results.sort((a, b) => {
+          if (sortBy == 'padName') { return b.padName.localeCompare(a.padName); }
+          return b[sortBy] - a[sortBy];
+        });
+      } else {
+        data.results.sort((a, b) => {
+          if (sortBy == 'padName') { return a.padName.localeCompare(b.padName); }
+          return a[sortBy] - b[sortBy];
+        });
       }
 
-      var activeusers = 0;
-      var padSizeTotal = 0;
-      var changedToday = 0;
-      var last24 = Math.floor( Date.now() / 1000 ) - 86400 ;
-      //sortedResults.forEach((resultset) => {
+      let activeusers = 0;
+      let padSizeTotal = 0;
+      let changedToday = 0;
+      const last24 = Math.floor(Date.now() / 1000) - 86400;
+
+      const fs = require('fs');
+      let ashpath = '/data/var/www/moodle_production/mod/etherpadlite';
+      let pluginUrl = '../p/';
+      if (fs.existsSync(ashpath)) {
+        pluginUrl = 'https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad=';
+      }
+
+      // sortedResults.forEach((resultset) => {
       data.results.forEach((resultset) => {
         const {padName, lastEdited, userCount, padSize, revisions} = resultset;
         const row = $('#template').clone().removeAttr('id');
-        var pluginUrl = 'https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad';
-        row.find('.padname').empty().append( $('<a target="pad">').attr('href', `${pluginUrl}=${encodeURIComponent(padName)}`).text(padName));
+
+        row.find('.padname').empty().append($('<a target="pad">').attr('href',
+            `${pluginUrl}${encodeURIComponent(padName)}`).text(padName));
         row.find('.last-edited').text(formatDate(lastEdited));
-        row.find('.Size').text(padSize.toLocaleString("de-DE"));
-        row.find('.Revisions').text(revisions); //.toLocaleString("de-DE"));
+        row.find('.Size').text(padSize.toLocaleString('de-DE'));
+        row.find('.Revisions').text(revisions); // .toLocaleString("de-DE"));
         row.find('.user-count').text(userCount);
         resultList.append(row);
         activeusers += userCount;
         padSizeTotal += padSize;
-        if ( Math.floor(lastEdited/1000) >= last24 ) { changedToday += 1;  }
+        if (Math.floor(lastEdited / 1000) >= last24) { changedToday += 1; }
       });
-      $('#activeusers').text(activeusers.toLocaleString("de-DE"));
-      $('#padsizetotal').text(padSizeTotal.toLocaleString("de-DE"));
-      //$('#results-autoupdate').prop('checked') = doAutoUpdate();
+      $('#activeusers').text(activeusers.toLocaleString('de-DE'));
+      $('#padsizetotal').text(padSizeTotal.toLocaleString('de-DE'));
+      // $('#results-autoupdate').prop('checked') = doAutoUpdate();
       $('#pad-widget').show();
-      //statistics
-      $('#totalPads').text(total); //text(data.Stats.totalPads);
+      // statistics
+      $('#totalPads').text(total); // text(data.Stats.totalPads);
       $('#changedToday').text(changedToday);
-      //$('#totalSessions').text(data.Stats.totalSessions);
-      //$('#activePads').text(data.Stats.totalActivePads)
+      // $('#totalSessions').text(data.Stats.totalSessions);
+      // $('#activePads').text(data.Stats.totalActivePads)
 
-      var sortCol = $('#'+sortBy).text();
-      var arrow   = descending ?" &darr;" :" &uarr;";
-      $('#'+sortBy).html( "<i>"+sortCol + "</i>" + arrow);
-
+      const sortCol = $(`#${sortBy}`).text();
+      const arrow = descending ? ' &darr;' : ' &uarr;';
+      $(`#${sortBy}`).html(`<i>${sortCol}</i>${arrow}`);
     } else {
       $('#loading').hide();
       $('#pad-widget').hide();

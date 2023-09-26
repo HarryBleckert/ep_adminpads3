@@ -9,8 +9,7 @@ let ioNs = null;
 
 // Sorting requires all pads to be loaded and analyzed.
 // Todo: Retrieve all Pads only 1 time and update only new or edited pads in stored array.
-const queryLimit = 35000; //12;
-
+const queryLimit = 900;
 
 const isNumeric = (arg) => typeof arg === 'number' || (typeof arg === 'string' && parseInt(arg));
 const regExpQuote = (x) => x.toString().replace(/[-\\^$*+?.()|[\]{}]/g, '\\$&');
