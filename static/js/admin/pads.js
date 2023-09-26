@@ -11,8 +11,6 @@
 
 'use strict';
 
-// const settings = require('ep_etherpad-lite/node/utils/Settings');
-
 $(() => {
   let query = {
     pattern: '',
@@ -196,14 +194,12 @@ $(() => {
       let padSizeTotal = 0;
       let changedToday = 0;
       const last24 = Math.floor(Date.now() / 1000) - 86400;
-
-      const fs = require('fs');
       let ashpath = '/data/var/www/moodle_production/mod/etherpadlite';
       let pluginUrl = '../p/';
-      if (fs.existsSync(ashpath)) {
+      /*if (fs.existsSync(ashpath)) {
         pluginUrl = 'https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad=';
       }
-
+      */
       // sortedResults.forEach((resultset) => {
       data.results.forEach((resultset) => {
         const {padName, lastEdited, userCount, padSize, revisions} = resultset;
