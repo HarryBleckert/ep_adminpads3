@@ -15,7 +15,7 @@ $(() => {
   let query = {
     pattern: '',
     offset: 0,
-    limit: 900,
+    limit: 36000,
   };
   let total;
 
