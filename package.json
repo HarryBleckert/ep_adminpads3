@@ -1,6 +1,6 @@
 {
   "name": "ep_adminpads3",
-  "version": "3.0.9.2",
+  "version": "3.0.10",
   "description": "Etherpad plugin to search, view sorted lists and delete pads in /admin.",
   "keywords": [
     "etherpad",
