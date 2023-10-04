@@ -1,10 +1,17 @@
 /**
  *
+ * @package   ep_adminpoads3
+ * @copyright 2021 onwards ASH Berlin {@link https://ASH-Berlin.eu}
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GNU GPL v3 or later
+ * @author    Harry@Bleckert.com
+ */
+
+/**
+ *
  * ToDos:
  * - fix AutoUpdate. It doesn't work, disabled in pads.html
  * - find better solution to sort only single time and allow re-using result array
- * - Add pluginUrl to etherpad settings and retieve from there or configure. Currently Moodle instance of ASH Berlin is hardcoded.
- *   pluginUrl = 'https://moodle.ash-berlin.eu/mod/etherpadlite/view.php?pad';
+ * - Add pluginUrl to etherpad settings and retrieve from there or configure.
  */
 
 /* global _ */

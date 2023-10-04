@@ -1,3 +1,12 @@
+
+/**
+ *
+ * @package   ep_adminpoads3
+ * @copyright 2021 onwards ASH Berlin {@link https://ASH-Berlin.eu}
+ * @license   https://www.gnu.org/licenses/gpl-3.0.html GNU GPL v3 or later
+ * @author    Harry@Bleckert.com
+ */
+
 'use strict';
 
 const $ = require('cheerio').load('');
