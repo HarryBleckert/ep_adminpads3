@@ -111,6 +111,7 @@ exports.socketio = (hookName, {io}, cb) => {
         // pad exists, remove it
         const pad = await padManager.getPad(padId);
         await pad.remove();
+        socket.emit('delete', padId);
         socket.emit('progress', {progress: 1});
       }
     });
