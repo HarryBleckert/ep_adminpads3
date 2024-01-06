@@ -110,8 +110,10 @@ exports.socketio = (hookName, {io}, cb) => {
       if (padExists) {
         // pad exists, remove it
         const pad = await padManager.getPad(padId);
+        // Jan 24: Problem with postgresql: pads disappear in view, but not from database!!!
+        // see https://github.com/HarryBleckert/ep_adminpads3/issues/14#issuecomment-1879572582
+        // socket.emit('delete', padId);
         await pad.remove();
-        socket.emit('delete', padId);
         socket.emit('progress', {progress: 1});
       }
     });
